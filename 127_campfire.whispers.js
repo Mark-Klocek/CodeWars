@@ -55,13 +55,13 @@
 //P - friends - array of tuples that contains two elements, a string representing the friends name, and a string representing the friends mood (participative, uninsterested, or 'excited')
 
 
-//P: array of arrays which subarrays include the friends name and friends mood in string form. Will there only be strings? Will there always only be two items in the array? 
+//Parameters: array of arrays which subarrays include the friends name and friends mood in string form. Will there only be strings? Will there always only be two items in the array? 
 //   A string representing a sample quote - will this always be a string? will it ever be an array?
-//   index - an integer representing the index of the friend in the friends array who we want to ask what they were told - so there will be an index where we will select from the array of arrays, so friends[index][0] will be the name, and friends[index][1] will be the quote?
+//   index - an integer representing the index of the friend in the friends array who we want to ask what they were told - so there will be an index where we will select from the array of arrays, so friends[index][0] will be the name, and friends[index][1] will be the quote? will index always be positive?
 
-//R: A string representing what the friend at index cites when asked what they got told by the previous friend
+//Return: A string representing what the friend at index cites when asked what they got told by the previous friend
 
-//E:    friends = [["Bob","participative"],["Ann","participative"]]
+//Examples:    friends = [["Bob","participative"],["Ann","participative"]]
 //      quote = "There's no place like home."
 //      index = 0
 //      return "Ann told me that I told Ann 'There's no place like home.'."
@@ -91,24 +91,43 @@
 //      return "Bob told me 'Whatever.'."
 
 function campfire(friends, quote, index) {
-    // examine the array at position of index
-    // for loop that iterates length of array
-    // start at index, if index is > length of the array, start the index at 0 again (we are still only iterating for total amount of times that is equal to the length of the array)
-    // if index is 0, you must iterate through entire array backwards, if index > 0, you must iterate forwards up to the index\
+    // Psuedo code
+    // start iteration at index
+    // if index > 0,iterate backwards from index to 0th array position.
+    // if index == 0, you must iterate backwards through array until it hits 0
+    // for the quote, you are just listening to the person behind the index.
+    // if the person behind the index is uninterested - the quote becomes "whatever"
+    // if the person is participative, you iterate backwards to find the quote behind them and pass it along
+    // if the person is excited, you look behind them to see what the quote is, then add Wow! That's amazing!
     let returnQuote = ''
     if (index > 0){
-        let counter = 1
-        while (counter > 0){
-            quote += friends[index - counter][0]+ ' '
-            
-            counter ++
+        let counter = index - 1
+        while (counter >= 0){
+            console.log(friends[counter])
+            if (counter == index - 1){
+                
+                returnQuote += `${friends[counter][0]} told me `
+            }
+            else if (counter < index - 1 && counter != 0){
+                returnQuote += `that ${friends[counter][0]} told ${friends[counter+1][0]} that `
+            }
+            else if (counter == 0){
+                returnQuote += `that ${friends[0][0]} told ${friends[1][0]} `
+            }
+            friends[counter][1] == 'uninterested' ? quote = 'Whatever.' : ''
+            friends[counter][1] == 'excited'
+            friends[index][1] == 'uninterested' ? quote = 'Whatever.': ''
+            counter --
         }
+        returnQuote +=  `"${quote}".`
     }
   return returnQuote;
 
 }
-friends = [["Bob","participative"],["Ann","participative"],["jacob","participative"],["mark","participative"],["luke","participative"],["paul","participative"]]
+friends = [["Bob","participative"],["Ann","participative"],["jacob","participative"],["mark","uninterested"],["luke","participative"],["paul","participative"]]
+//friends = [["Bob","participative"],["Ann","uninterested"]]
 index = 4
+index = 5
 quote = `There's no place like home!`
 
-campfire(friends,quote,index)
+console.log(campfire(friends,quote,index))
