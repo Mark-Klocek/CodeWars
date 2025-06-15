@@ -14,6 +14,11 @@
 
 // For the sake of simplicity, you can assume that any numbers passed into the function will correspond to vowels.
 
+//P: Give me a string, no numbers or arrays?
+
+//R:First function will return the string with vowels replaced by numbers
+
+
 
 
 //E:
@@ -23,14 +28,31 @@
 // let string = "Why did you leave me?"
 // let string = "Encryption complete."
 // let string = "hello world"
-// let string = "Can you read this?"
+ let string = "Can you read this?"
 // let string = "Testing one two three."
 // let string = "This is a simple string."
 // let string = "Vowels will be encoded."
+
 function encode(string) {
-  return
+  //P
+  //split string into array
+  //search each element for vowel
+  //replace vowel with numer
+  //join array back to string
+  //return string
+  
+  string = string.replaceAll("a","1").replaceAll('e','2').replaceAll('i','3').replaceAll('o','4').replaceAll('u','5')
+  return string
 }
 
 function decode(string) {
-  return
+
+  //P
+  //take in string
+  //5 replace alls for the numbers into letters
+  //return string
+  string = string.replaceAll("1","a").replaceAll('2','e').replaceAll('3','i').replaceAll('4','o').replaceAll('5','u')
+  return string
 }
+
+console.log(decode(encode(string)))
