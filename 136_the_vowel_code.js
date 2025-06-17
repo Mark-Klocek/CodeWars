@@ -28,7 +28,7 @@
 // let string = "Why did you leave me?"
 // let string = "Encryption complete."
 // let string = "hello world"
- let string = "Can you read this?"
+// let string = "Can you read this?"
 // let string = "Testing one two three."
 // let string = "This is a simple string."
 // let string = "Vowels will be encoded."
