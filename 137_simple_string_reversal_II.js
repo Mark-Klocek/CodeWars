@@ -28,9 +28,9 @@ console.log('test')
 
 function solve(st, a, b){
     //P
-    //slice string into three parts
-    //take middle portion of slice, reverse it, rejoin all three parts
-    //return fixed string  
+    //find portion to be replaced
+    //reverse portion to be replaced
+    //replace portion with reversed portion
     let portionToReplace = st.slice(a,b+1)
     let reversedPortion = portionToReplace.split('').reverse().join('')  
     string = st.replace(portionToReplace,reversedPortion)
