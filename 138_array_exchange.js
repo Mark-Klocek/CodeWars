@@ -52,6 +52,13 @@ let b = [1, 2, 3]
 // let b = [0, 0, 0]
 
 function exchangeWith(a, b) {
+    //P
+    // temporary array containing a
+    // empty a
+    // fill a with b
+    // empty b
+    // fill b with temp
+    // reverse both arrays
     let temp = [...a]
     a.length = 0
     a.push(...b)
