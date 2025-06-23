@@ -15,7 +15,7 @@
 //E: 
 
 // let string = "Speggetegghetti"       // => Spaghetti
- let string = "Reggunneregg"          // => Runner
+// let string = "Reggunneregg"          // => Runner
 // let string = "Deggressegg"           // => Dress
 // let string = "Eggxpleggaineregg"     // => Explainer
 // let string = "Heggammeregg"          // => Hammer
