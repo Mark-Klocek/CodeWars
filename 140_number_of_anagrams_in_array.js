@@ -8,13 +8,13 @@
 //     There are 7 anagrams in the array ["dell", "ledl", "abc", "cba", "bca", "bac"]
 
 
-//P: We will be given an array of strings, will there be any numbers? will we have to c onvert anything from a string to an array?
+//P: We will be given an array of strings, will there be any numbers? will we have to c onvert anything from a string to an array? What happens in an empty array?
 
 //R:We are returning a number wit hthe total amount of anagrams in a given array
 
 //E:
-let array = ["dell", "ledl", "abc", "cba"]
-//let array = ["dell", "ledl", "abc", "cba", "bca", "bac"]
+//let array = ["dell", "ledl", "abc", "cba"]
+let array = ["dell", "ledl", "abc", "cba", "bca", "bac"]
 function anagramCounter (wordsArray) {
     //P
     //forEach
@@ -27,13 +27,13 @@ function anagramCounter (wordsArray) {
         
     })
     wordsArray.forEach((element,index)=>{
-        console.log(wordsArray)
-        for (let i = index;i<wordsArray.length;i++){
-            let tempArray = wordsArray.slice(wordsArray.length - i,wordsArray[i]+1)
-            console.log(tempArray)
-        }
+        let tempArray = wordsArray.slice(index+1)
+        tempArray.forEach((element2,_)=>{
+            if (element === element2){counter ++}
+        })
+        
     })
-  return 0;
+  return counter;
 }
 
 console.log(anagramCounter(array))
