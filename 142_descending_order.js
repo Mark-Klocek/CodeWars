@@ -21,7 +21,8 @@ function descendingOrder(n){
   // sort array
   // rejoin number
   //return number
-  return n
+  n = String(n).split('').sort((a,b)=> +b - +a).join('')
+  return Number(n)
 }
 
 console.log(descendingOrder(input))
