@@ -17,7 +17,16 @@
 
 //     Output: 2
 
-
+let str = "..x..\n.....\n.....\n..x..\nxx..x"
+//let str = "..x\n...\nx.."
+//let str = "...\n...\n..."
+//let str = "x..\nx..\nx.x"
+//let str = "....\n..x.\n.x..\n...."
+//let str = "....\n..x.\nx...\n...."
+//let str = ".....\n..x..\n.....\n..x..\nxx.xx"
 function minXPath(grid) {
-
+    let gridArray = grid.split('\n')
+    return gridArray
 }
+
+console.log(minXPath(str))
