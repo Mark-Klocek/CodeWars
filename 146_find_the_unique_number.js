@@ -38,7 +38,7 @@ function findUniq(arr) {
       obj[element] += 1
     }
   })
-  console.log(obj)
+  
   for (items in obj){
     if (obj[items] < 2){
       return Number(items)
