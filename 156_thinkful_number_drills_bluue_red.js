@@ -29,9 +29,9 @@ function guessBlue(blueStart, redStart, bluePulled, redPulled) {
   //divide totalBlue by the sum of totalBlue and totalRed
   //return that result
 
-  let blueTotal = blueStart - bluePulled
+  let blueTotal = 
   let redTotal = redStart - redPulled
-  return blueTotal / (blueTotal + redTotal)
+  return blueStart - bluePulled/ (blueStart - bluePulled + redStart - redPulled)
 
     
 }
