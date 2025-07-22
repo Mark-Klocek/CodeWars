@@ -13,3 +13,7 @@
 // digits   = 3   #  [3, 1, 4]
 // expected = 6   #  sqrt(3^2 + 1^2 + 4^2) = 5.099 --> 6
 
+function squarePi(digits){
+  //Code probably goes here
+  return digits;
+}
