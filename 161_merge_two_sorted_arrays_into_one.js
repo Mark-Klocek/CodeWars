@@ -17,5 +17,11 @@
 
 
 function mergeArrays(arr1, arr2) {
-  
+    
+    arr1.push(...arr2)
+    
+  return arr1.sort((a,b)=>a-b)
 }
+
+
+console.log(mergeArrays([6, 7, 8, 9, 10],[1, 2, 3, 4, 5]))
