@@ -29,6 +29,9 @@
 //     Random test cases of varying lengths
 
 function removeChar(str){
- //You got this!
+  str = str.split('')
+ a = str.shift()
+ b = str.pop()
+  return str.join('')
 
 };
