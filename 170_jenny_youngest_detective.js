@@ -16,5 +16,34 @@
 //E: [0,2,3] "We are Billies" = > "war"
 
 function missingWord(nums, str) {
-  
+  //Psuedo
+  //strip the string of all spaces
+  //split the string into an array
+  //sort the nums array in ascending order
+  //iterate through number array
+  //if the string contains the index at the current place in the number array
+  //push the element of the string array corresponding to the number array onto a new array
+  //else false the bool so it returns error message
+  //join the new array into a new word(string)
+  //return the final string
+
+  str = str.replaceAll(" ","")
+  str = str.split('')
+  let outside = false
+  let returnArr = []
+  nums = nums.sort((a,b)=>a-b)
+  nums.forEach((element,_)=>{
+    if(str[element]){
+        returnArr.push(str[element].toLowerCase())
+    }
+    else{
+        outside = true
+    }
+  })
+  if (outside){
+    return 'No mission today'
+  }
+  else{
+    return returnArr.join('')
+  }
 }
