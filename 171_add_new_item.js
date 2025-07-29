@@ -8,7 +8,18 @@
 
 // P.S. You have to create a new list and add a new item to that. (This Kata is originally designed for C# language and it shows that adding a new item to the input list is not going to work, even though the parameter is passed by value, but the value is poining to the reference of list and any change on parameter will be seen by caller)
 // Fundamentals
+
+
+//P: we are given an array
+
+//R: we are returning an array with something added to the end of it, anything
+
+//E: [1,2,3] => [1,2,3,'`']
 function addExtra( listOfNumbers ){
-    // your code here
-    // add an int to listOfNumbers and return it
+    //P: push anything onto the given array
+    //return the array
+    newList = [...listOfNumbers]
+    newList.push('-')
+    listOfNumbers.push('-')
+    return newList
 }
