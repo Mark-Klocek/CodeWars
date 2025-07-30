@@ -25,5 +25,28 @@
 
 
 var AmIAfraid = function(day, num){
-  //Help me...
+  //Psuedo
+  //initialize a boolean to be false
+  
+  //switch case for each day of the week, to see if the num provided falls within the parameters of being a "scary" number
+  //if it falls within the parameter, change bool to true
+  //return bool
+  let scary = false
+  switch(day){
+    case 'Monday':
+        break;
+    case 'Tuesday':
+        break;
+    case 'Wednesday':
+        break;
+    case 'Thursday':
+        break;
+    case 'Friday':
+        break;
+    case 'Saturday':
+        break;
+    case 'Sunday':
+        break;
+  }
+
 }
