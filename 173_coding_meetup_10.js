@@ -27,7 +27,27 @@
 //     Lastname will always be one upper-cased letter followed by dot, e.g. 'N.'
 //     Order of the objects in the array should be maintained but order of the properties in the individual objects does not matter.
 
+//P: we are given an array of objects. it will always be valid formated in the way above.
+
+//R: We are returning the array of objects with each object having the username property appended to it
+
+//E:    { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' } => { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby',username: 'emilyn1990' },
 function addUsername(list) {
-  // thank you for checking out the Coding Meetup kata :)
+  //Psuedo:
+  // we want to iterate through each object in the array
+  // for each element, we want to assign a variable to the first name lower cased
+  //then we want to concatenate the first letter of the last name onto that variable
+  //then we want to contatenate 2020 - age to the end of that variable
+  //we then want to, using dot notation, add the property username with the value of that variable to each element
+
+list.forEach(element=>{
+  let userName = element.firstName.toLowerCase()
+  userName += element.lastName.split('')[0].toLowerCase()
+  userName += String(2020 - element.age)
+  element.username = userName
+})
+
+return list
+
 }
 

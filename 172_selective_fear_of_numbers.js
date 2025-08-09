@@ -34,19 +34,26 @@ var AmIAfraid = function(day, num){
   let scary = false
   switch(day){
     case 'Monday':
+        num === 12 ? scary = true : ''
         break;
     case 'Tuesday':
+        num > 95 ? scary = true : ''
         break;
     case 'Wednesday':
+        num === 34 ? scary = true : ''
         break;
     case 'Thursday':
+        num === 0 ? scary = true : ''
         break;
     case 'Friday':
+        num % 2 === 0 ? scary = true : ''
         break;
     case 'Saturday':
+        num === 56 ? scary = true : ''
         break;
     case 'Sunday':
+        num === 666 || num === -666 ? scary = true : ''
         break;
   }
-
+  return scary
 }
