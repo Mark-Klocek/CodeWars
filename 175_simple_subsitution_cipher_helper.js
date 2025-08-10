@@ -34,9 +34,35 @@ function SubstitutionCipher(abc1, abc2) {
     //append that letter onto returnString
     //return returnString
   this.encode = function (str) {
+    str = str.split('')
+    returnString = ''
     
+    str.forEach(element=>{
+        if (abc1.includes(element)){
+            console.log(element)
+            newLetter = abc2[abc1.indexOf(element)]
+            console.log(newLetter)
+            returnString += newLetter
+        }else{
+            returnString += element
+        }
+        
+    })
+    return returnString
   }
   this.decode = function (str) {
+    str = str.split('')
+    returnString = ''
+    str.forEach(element=>{
+        if (abc1.includes(element)){
+            newLetter = abc1[abc2.indexOf(element)]
+            returnString += newLetter
+        }else{
+            returnString += element
+        }
+        
+    })
+    return returnString
   }
 }
 var sub = new SubstitutionCipher(abc1, abc2);
