@@ -22,10 +22,50 @@
 
 // https://en.wikipedia.org/wiki/Passphrase
 
+//P We are given two things - a pass code in all caps, and a number to shift the letters by. Will it always be in all caps?
+
+//R We are returning the original string having gone through the encoding process
+
+//E: Example 
+   // "BORN IN 2015!", 1 => "!4897 Oj oSpC"
 
 
 function playPass(s, n) {
-    // your code
+    //Split the input string into an array.
+    //iterate over each element in the array
+    //verify if the element is a letter, number, or special character
+    //if it's a letter verify to see if the indexOf that letter + the shift number is > 26
+    //if its not greater, return alphabet[alphabet.indexOf(original letter) + shift]
+    //if it IS greater, we want to return the indexOf + shift - 26 index of the alphabet
+    //then lastly, if it is a letter and an odd index, we want to lowercase the letter
+    //if it is a letter and an even index, we want to uppercase the letter
+    //if it is a number, we want change it to the difference between 9 and that number
+    //if it is a special character, we leave it alone
+    s = s.split('')
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    alphabet = alphabet.split('')
+    let returnString = s.map((element,index)=>{
+        let letter = ''
+        if (alphabet.includes(element)){
+            if (alphabet.indexOf(element) + n > 25){
+                letter = alphabet[alphabet.indexOf(element) + n - 26]
+            }else{
+                letter = alphabet[alphabet.indexOf(element) + n]
+            }
+            if (index % 2 !== 0){
+                letter = letter.toLowerCase()
+            }
+        }
+        else if (element >= '0' && element <= '9'){
+            letter = 9 - Number(element)
+            console.log(element)
+        }else{
+            letter = element
+        }
+        return letter
+    })
+    
+    return returnString.reverse().join('')
 }
 
 
@@ -42,3 +82,5 @@ function playPass(s, n) {
 
 //   });
 // });
+
+console.log(playPass("MY GRANMA CAME FROM NY ON THE 23RD OF APRIL 2015", 2))
