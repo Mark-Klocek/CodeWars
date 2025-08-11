@@ -21,7 +21,25 @@ let str = 'abbccdef'
 
 console.log('test')
 function duplicateCount(text){
-   
+    //Psuedo
+    //we want to split the string into an array
+    //then we want to create two empty arrays
+    //As we iterate through the original string, we want to check to see if that character exists in the first array. if it does not exist, we add it if it does exist, we do another check
+    //if it exists in the first array, we check to see if it exists in the second array. if it DOES exist in the 2nd array already, we ignore it. if it does NOT exist in the 2nd array, we add it to the 2nd array
+    //return the length o the second array
+    text = text.split('')
+    let arr1 = []
+    let arr2 = []
+
+    text.forEach(element =>{
+        if (!arr1.includes(element.toLowerCase())){
+            arr1.push(element.toLowerCase())
+        }
+        else if (arr1.includes(element.toLowerCase()) && !arr2.includes(element.toLowerCase())){
+            arr2.push(element.toLowerCase())
+        }
+    })
+  return arr2.length
 }
 
 
