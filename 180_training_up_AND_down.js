@@ -34,6 +34,45 @@
 //     Process: go from left to right, move only consecutive strings when needed.
 //     For the first fixed tests the needed number of moves to get property (P) is given as a comment so that you can know if your process follows the rule.
 
+//P we are given a string of "substrings(words)" that will be of N length
+
+
+//R: We are returning the string re-arranged in the form of s0 <= s1 >= s2 <= s3 >= s4 etc
+
+//E: 'this is a string' => 'is <= this => a <= string'
+
+
+let str = "after be arrived two My so"
+
 function arrange(strng) {
-    // your code
+    //P
+    //split the string into an array
+    //iterate through new array
+    //if index is even, it must be less than or equal to the next element in the array
+    //if index is odd, it must be greater than or equal to the next element in the array
+    //rejoin array with a space between each word
+    //return that string
+    strng = strng.split(' ')
+    strng.forEach((_,index)=>{
+        if (index % 2 == 0){
+            temp = strng[index]
+            console.log(strng[index].length)
+            if (strng[index].length > strng[index+1].length){
+                strng[index] = strng[index+1]
+                strng[index+1] = temp
+            }
+        }else{
+            if (index != strng.length -1 && strng[index].length < strng[index+1].length){
+                strng[index] = strng[index+1]
+                strng[index+1] = temp
+            }
+        }
+    })
+    strng = strng.map((element,index)=>{
+        return index % 2 !== 0 ? element.toUpperCase(): element.toLowerCase()
+    })
+    return strng.join(' ')
+
 }
+
+console.log(arrange(str))
