@@ -17,8 +17,29 @@ console.log('test')
 let str1 = '4455446'
 let str2 = '447555446666'
 function findAdded(st1, st2){
-    
-    return 
+    //Psued
+    // break strings into arrays
+    //iterate through st2
+    //if element in st2 exists in st1, remove element from both st2 and st1
+    //we do this by splicing st2, and replacing indexof element in st1 with an empty space
+    //we then join the st2 to get rid of empty spaces
+    //split st2 again so we can sort it in ascending order
+    //conver each string number into a number
+    //sort the array
+    //rejoin the array, and return the joined version of the array
+
+    st1 = st1.split('')
+    st2 = st2.split('')
+    st2.forEach((element,index)=>{
+        if (st1.includes(element)){
+            st2.splice(index,1,'')
+            st1.splice(st1.indexOf(element),1,'')
+            
+        }
+    })
+    st2 = st2.join('')
+    st2 = st2.split('')
+    return st2.sort((a,b)=>+a-+b).join('')
 }
 
 
