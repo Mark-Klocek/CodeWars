@@ -50,19 +50,21 @@ function arrange(strng) {
     //iterate through new array
     //if index is even, it must be less than or equal to the next element in the array
     //if index is odd, it must be greater than or equal to the next element in the array
+    //iterate to capitalize each odd index and lowercase each even index
     //rejoin array with a space between each word
     //return that string
     strng = strng.split(' ')
     strng.forEach((_,index)=>{
-        if (index % 2 == 0){
+        if (index != strng.length -1 && index % 2 == 0){
             temp = strng[index]
-            console.log(strng[index].length)
+            
             if (strng[index].length > strng[index+1].length){
                 strng[index] = strng[index+1]
                 strng[index+1] = temp
             }
         }else{
             if (index != strng.length -1 && strng[index].length < strng[index+1].length){
+                temp = strng[index]
                 strng[index] = strng[index+1]
                 strng[index+1] = temp
             }
