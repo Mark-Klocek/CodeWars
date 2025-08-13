@@ -8,10 +8,26 @@
 //R: We are returning a boolean to see if the string is a pangram or not
 
 //E:    'abcdefghijklmnopqrstuvwxyz' => true,
-//      'this is a string' => false        
+let str ='abcdefghijklmnopqrstuvwxyz'
 function isPangram(string){
+    //Psuedo
+    //create an alphabet string a-z
+    //break input string into array of characters
+    //iterate through array
+    //replace each character in the alphabet with the element in each array with an empty space
+    //return if alphabet string ==== ''
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'
     
+    string = string.toLowerCase().split('')
+    string.forEach(element=>{
+        alphabet = alphabet.replace(element,'')
+    })
+    
+    
+    return alphabet === ''
 
 
 
 }
+
+console.log(isPangram(str))
