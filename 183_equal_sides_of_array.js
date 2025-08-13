@@ -28,8 +28,33 @@
 
 // If you are given an array with multiple answers, return the lowest correct index.
 
+//P: We are given an array of integers, consisting of positive and negative integers
 
+//R: We are returning the index of the array in which the left of the index and dthe right of the index equal eachother
+
+//E: [1,100,50,-51,1,1] => return 1, because 1 === 50-51+1+1 
+let arr = [-1,1,0,-1,1,0,-1,1,0,0]
 function findEvenIndex(arr) {
-  //Code goes here!
-    return -1;
+    //Psuedo
+    //create rightTotal as a variable that will hold the value of the array to the right of the current index
+    //set leftTotal to 0 
+    //iterate throug hthe array
+    //if leftTotal != rightTotal, move theindex to the right, add the current element to the left, remove it from the right
+    //when leftTotal and rightTotal are equal, return the current index
+    let arrTotal = arr.reduce((acc,c)=>acc+=c,0)
+    let leftTotal = 0
+    let rightTotal = arrTotal - arr[0]
+    for(let i = 0;i<arr.length;i++){
+        if (leftTotal != rightTotal){
+            leftTotal += arr[i]
+            rightTotal -= arr[i+1]
+        }else{
+            return i
+        }
+        
+    }
+    
+    return 'something messed up';
 }
+
+console.log(findEvenIndex(arr))
