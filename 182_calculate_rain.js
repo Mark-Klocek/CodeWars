@@ -56,8 +56,82 @@ const data1 =
 
 
 function mean(town, strng) {
-// Your code
+     //P Verify that the town passed into the funtion exists in the data set
+     //split the data set so that you can navigate to the city provided in the town variable
+     //take that string and replace the : with a , so we can further split that string into another array
+     //now that we have the city's yearly rain in an array, we want to break each entry into its own array
+     //each month we split into its own array by splitting on the whitespace
+     //each time we iterate through a month, we add it to the total month rain count
+     //for each month, we are splitting it into an array with two elements - the second element will be the total rain count for that month
+     //for each month, we target month[1] and add it to the total rain fall
+     //after we have total rain fall and total months that had rain, we can return total rain / total months to find the mean
+     let cities = strng.split('\n')
+     let listOfCities = []
+     cities.forEach(element=>{
+          listOfCities.push(element.split(':')[0])
+     })
+     if (!listOfCities.includes(town)){
+          return -1
+     }
+     let monthCount = 0
+     let totalRain = 0
+     cities.forEach(element=>{
+          if (element.includes(town)){
+               element = element.replace(':', ',')
+               monthCount = element
+               element = element.split(',')
+               monthCount = element.length - 1
+               
+               element.forEach((month,index)=>{
+                    
+                    if (index != 0){
+                         month = month.split(' ')
+                         totalRain += Number(month[1])
+                    }
+               })
+               
+          }
+     })
+     console.log(listOfCities)
+     return totalRain / monthCount
 }
 function variance(town, strng) {
-    // Your code
+    //P
+    //To find the variance, first we need the mean
+    //after calling mean function we need to create a deviations array
+     //after deviations array, we have to iterate through the data set again like we did before
+     //to find the variance, we must find the squared deviation from the mean for each month
+     //split each month on the empty space so that month[1] will be the total rain fall
+     //for each month, we subtract the total rainfall for that month from the mean, then square it, then push it onto the deviations array
+     //after all total rain fall is squared and added into deviations, we use the reduce function to get the total deviation, then we divide it by the length of the deviations array to find the variance
+     //return variance
+     cities = strng.split('\n')
+     let listOfCities = []
+     cities.forEach(element=>{
+          listOfCities.push(element.split(':')[0])
+     })
+     if (!listOfCities.includes(town)){
+          return -1
+     }
+     let meanRain = mean(town,strng)
+     let deviations = []
+
+     
+     cities.forEach(city =>{
+          if (city.includes(town)){
+               city = city.replace(':',',')
+               let cityRainYear = city.split(',')
+               cityRainYear.forEach((month,index)=>{
+                    if (index != 0){
+                         month = month.split(' ')
+                         deviations.push((meanRain - Number(month[1])) ** 2)
+                         
+                    }
+               })
+          }
+     })
+     let totalDeviation = deviations.reduce((acc,c)=>acc += c,0)
+     return totalDeviation / deviations.length
 }
+
+console.log(variance('London', data))
