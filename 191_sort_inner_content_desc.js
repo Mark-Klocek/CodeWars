@@ -27,7 +27,30 @@ let str = 'wait for me'
 
 
 function sortTheInnerContent(words){
-   
+    //P Split sentencec into array
+    // Iterate through each element
+    // pop and shift first and last letters
+    //split rest of element
+    //sort rest of element
+    // reverse that array
+    // unshift and push old irst/last letters
+    //return that element
+
+
+    words = words.split(' ')
+
+    words = words.map(element=>{
+        element = element.split('')
+        let firstLetter = element.shift()
+        let lastLetter = element.pop()
+        element = element.sort()
+        element = element.reverse()
+        element.push(lastLetter)
+        element.unshift(firstLetter)
+        return element.join('')
+    })
+
+
   return words.join(' ');
 }
 console.log(sortTheInnerContent(str))
