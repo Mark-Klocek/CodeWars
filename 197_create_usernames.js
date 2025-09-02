@@ -53,7 +53,33 @@ var list1 = [
 
 
 function addUsername(list) {
-  
+  //psuedo
+  //iterate over array.
+  //for each element, set a new variable called username and set it to ''
+  //contatenate the firstname tolowercase onto the username
+  //take the lastname, split it into an array, then concatenate the first element tolowercase onto the username
+  // then take date.getfullyear - element.age, and concatenate that onto the end of the username
+  //set element.username = username
+  //return the original list
+
+
+  //iterating through objects
+  for(person of list){
+    let uName = ''
+    //getting current year
+    let year = new Date
+    //lower case first name
+    uName += person.firstName.toLowerCase()
+    //lowercase first letter of last name
+    uName += person.lastName.split('')[0].toLowerCase()
+    //adding actual birthdate
+    uName += year.getFullYear() - person.age
+
+    //adding username property to each object
+    person.username = uName
+    
+    
+  }
 
 
 return list
