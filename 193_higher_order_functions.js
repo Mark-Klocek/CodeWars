@@ -33,7 +33,17 @@ var list1 = [
 //E: Sum of ASCII codes of letters in 'Aba' is: 65 + 98 + 97 = 260 which is an even number 
 
 function findOddNames(list) {
-  
+  //Psuedo
+
+  //take in array of objects
+  //iterate through objects
+  //filter each object by the ascii value of firstName % 2 !== 0
+  //return that filter
+
+  return list.filter((element)=>{
+    let charTotal = element.firstName.split('').reduce((acc,c)=>acc += c.charCodeAt(0),0)
+    return charTotal % 2 !== 0 ? element : ''
+  })
 }
 
 console.log(findOddNames(list1))
