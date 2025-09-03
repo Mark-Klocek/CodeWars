@@ -71,7 +71,7 @@ function addUsername(list) {
     //lower case first name
     uName += person.firstName.toLowerCase()
     //lowercase first letter of last name
-    uName += person.lastName.split('')[0].toLowerCase()
+    uName += person.lastName[0].toLowerCase()
     //adding actual birthdate
     uName += year.getFullYear() - person.age
 
