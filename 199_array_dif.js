@@ -12,9 +12,9 @@
 //E: if a = [1,2,3,4] and b = [2,3] => [1,4]
 
 
-let a = [1,2,3,4,5,5,5,6,6,7,9,12]
+let a = [1,2,3,4,5]
 
-let b = [1,23,2,3,4,6,7,9,15,16]
+let b = [1,23,2]
 
 
 function arrayDiff(a, b) {
@@ -22,11 +22,11 @@ function arrayDiff(a, b) {
 //Psuedo
 //iterate through array b
 // have a = itself filtered for nothing in the element we are on for b
-
+    let returnArray = []
 
 
     b.forEach(childElement=>{
-        console.log(childElement)
+        a = a.filter(element => element != childElement)
     })
 
 
