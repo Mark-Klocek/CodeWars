@@ -50,3 +50,19 @@ function practice(arr,hi,low,target){
         }
     }
 }
+
+
+let returnArray = new Array
+
+for(let i = arr.length -1; i > 0; i--){
+    if (arr[i[0]]<arr[i-1][1]){
+        arr[i-1][0] = Math.min(arr[i-1])
+        arr[i-1][1] = Math.max(arr[i])
+        
+    }else{
+        returnArray.push(arr[i])
+    }
+
+
+
+}
