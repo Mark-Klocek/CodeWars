@@ -15,5 +15,5 @@
 //     An empty list of words should result in an empty list.
 //     alphabet = 'abcdefghijklmnopqrstuvwxyz' has been pre-defined for you, in case you need it
 
-def sort(words):
-    pass
+// def sort(words):
+//     pass
