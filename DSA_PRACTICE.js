@@ -54,15 +54,46 @@ function practice(arr,hi,low,target){
 
 let returnArray = new Array
 
-for(let i = arr.length -1; i > 0; i--){
-    if (arr[i[0]]<arr[i-1][1]){
-        arr[i-1][0] = Math.min(arr[i-1])
-        arr[i-1][1] = Math.max(arr[i])
-        
-    }else{
-        returnArray.push(arr[i])
+///linked list
+
+
+
+
+class Node{
+    constructor(Value){
+        this.value = Value
+        this.next = null
     }
+}
 
 
+//Queue
+class LinkedList{
+    constructor(){
+        this.head = this.tail = undefined
+        this.length = 0
+    }
+    enqueue(item){
+        this.length++;
+        if(!this.tail){
+            this.tail = this.head = Node(item)
+        }        
+        const tail = this.tail
+        this.tail = item
+        this.tail.next = tail
 
+    }
+    deque(){
+        if (!this.head){
+            return undefined
+        }
+
+        this.length--;
+        const head = this.head
+        this.head = this.head.next
+        return head.value
+    }
+    peek(){
+        return this.head?.value
+    }
 }
