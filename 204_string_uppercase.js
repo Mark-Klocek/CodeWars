@@ -13,6 +13,12 @@
 // In this Kata, a string is said to be in ALL CAPS whenever it does not contain any lowercase letter so any string containing no letters at all is trivially considered to be in ALL CAPS.
 
 let newString = "ASDASDASDASDASD"
-const isUpperCase = function() {
-  // your code here
-}
+String.prototype.isUpperCase = function() {
+  for (let i = 0; i < this.length; i++) {
+    const char = this[i];
+    if (char >= 'a' && char <= 'z') {
+      return false; // found a lowercase letter
+    }
+  }
+  return true; // no lowercase letters found
+};
