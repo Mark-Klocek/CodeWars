@@ -8,6 +8,8 @@
 
 
 
+
+
 function invert(array) {
-   return ;
+   return array.map(element => element * -1)
 }
