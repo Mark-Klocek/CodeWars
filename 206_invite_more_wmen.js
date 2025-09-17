@@ -18,7 +18,14 @@
 //     true if Arthur need to invite more women, false otherwise.
 
 function inviteMoreWomen(L) {
-  //coding and coding..
+  // Count men (1) and women (-1)
+  let men = 0, women = 0;
   
+  for (let i = 0; i < L.length; i++) {
+    if (L[i] === 1) men++;
+    else if (L[i] === -1) women++;
+  }
   
+  // Return true if more men than women
+  return men > women;
 }
