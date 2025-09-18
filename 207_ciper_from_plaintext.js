@@ -13,6 +13,29 @@
 // Special thanks to @Voile, @smile67, and @St3f4n for tips on improving the tests!
 
 function cipherFromPlaintext(plainText, encodedText) {
-    // Make coding great again!
-    return '';
+  // Build cipher: { 'a': first unique letter in plaintext, 'b': next, ... }
+  const seen = new Set();
+  const cipher = {};
+  for (const ch of plainText.toLowerCase()) {
+    if (ch >= 'a' && ch <= 'z' && !seen.has(ch)) {
+      const idx = seen.size;
+      if (idx < 26) {
+        cipher[String.fromCharCode(97 + idx)] = ch; // 'a'+idx -> unique letter
+        seen.add(ch);
+      }
+      if (seen.size === 26) break;
+    }
+  }
+
+  // Invert cipher to decode: value -> key
+  const rev = {};
+  for (const k in cipher) rev[cipher[k]] = k;
+
+  // Decode encodedText (only lowercase letters change; uppercase & non-letters stay)
+  let out = '';
+  for (const ch of encodedText) {
+    if (ch >= 'a' && ch <= 'z') out += rev[ch] || ch;
+    else out += ch;
+  }
+  return out;
 }
