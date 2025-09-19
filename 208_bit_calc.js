@@ -9,5 +9,16 @@
 // Those Math functions are enabled: pow,round,random
 
 function calculate(num1, num2) {
-    return parseInt(num1) + parseInt(num2);
+  function binaryToDecimal(binary) {
+    let result = 0
+    let len = binary.length
+    for (let i = 0; i < len; i++) {
+      if (binary[len - 1 - i] === '1') {
+        result += Math.pow(2, i)
+      }
+    }
+    return result
+  }
+
+  return binaryToDecimal(num1) + binaryToDecimal(num2)
 }
