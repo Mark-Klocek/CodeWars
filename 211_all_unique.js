@@ -4,6 +4,14 @@
 
 
 function hasUniqueChars(str){
-  
+  let chars = []
+  let uniqueOnly = true
+  str.split('').forEach(element=>{
+    if (!chars.includes(element)){
+        chars.push(element)
+    }else{
+        uniqueOnly = false
+    }
+  })
   return uniqueOnly
 }
