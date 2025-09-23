@@ -11,5 +11,11 @@ oddOne([2,4,6,8]) // => -1
 
 
 function oddOne(arr) {
-  // Code here
+  let returnIndex = null
+  arr.forEach((element,index)=>{
+    if (index % 2 !== 0){
+      returnIndex = index
+    }
+  })
+  return returnIndex
 }
