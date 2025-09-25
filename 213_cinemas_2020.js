@@ -21,5 +21,16 @@
 //     All seats will be valid.
 
 function maximumSeating(seats) {
-  return 1;
+  let count = 0
+  for (let i = 0; i < seats.length; i++) {
+    if (
+      seats[i] === 0 &&
+      (i === 0 || seats[i - 1] === 0) &&
+      (i === seats.length - 1 || seats[i + 1] === 0)
+    ) {
+      seats[i] = 1
+      count++
+    }
+  }
+  return count
 }
