@@ -13,5 +13,13 @@
 // Functional Programming
 // Fundamentals
 function latLng(raw) {
-	return [0.00, 0.00]
+  return raw
+    .split(',')
+    .map(s => s.trim()) // clean weird spaces
+    .map(coord => {
+      let value = parseFloat(coord); // number part
+      if (/[Ss]/.test(coord)) value *= -1; // South = negative
+      if (/[Ww]/.test(coord)) value *= -1; // West = negative
+      return value;
+    });
 }
