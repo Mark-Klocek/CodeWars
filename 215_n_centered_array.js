@@ -12,5 +12,8 @@
 //     otherwise returns false.
 
 function isCenteredN(arr, n) {
-    return false;
+  if (!arr.length) return n === 0
+  for (let i = 0; i < arr.length; i++) 
+    if (arr.slice(i, arr.length - i).reduce((a,b)=>a+b,0) === n) return true
+  return false
 }
