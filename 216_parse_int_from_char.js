@@ -6,5 +6,5 @@
 
 
 function getAge(inputString){
-  return 
+  return Number(inputString.split('')[0])
 }
