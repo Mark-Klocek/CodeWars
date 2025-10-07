@@ -14,5 +14,15 @@
 // what_list_am_i_on(actions)
 // #-> 'naughty'
 function whatListAmIOn(actions){
-  //your code here
+  let naughtyCounter = 0
+  let niceCounter = 0
+  actions.forEach(element=>{
+    let firstLetter = element[0]
+    if (firstLetter == 'b' || firstLetter == 'f' || firstLetter == 'k'){
+        naughtyCounter += 1
+    }else if(firstLetter == 'g' || firstLetter == 's' || firstLetter == 'n'){
+        niceCounter += 1
+    }
+  })
+  return niceCounter > naughtyCounter ? 'nice' : 'naughty'
 }
