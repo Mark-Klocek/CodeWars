@@ -6,6 +6,14 @@ console.log('219')
 function count(string) {
     let returnObj = {}
     
+    string = string.split('')
+    string.forEach((element) => {
+        if (returnObj[element]){
+           returnObj[element] += 1
+        }else{
+            returnObj[element] = 1
+        }
+    })
 
     return returnObj;
 }
