@@ -18,7 +18,14 @@
 // Whatever you do, do not change what the function does. Good luck :)
 
 function describeAge(age) {
-   
+    let returnMsg = "You're a(n) "
+    age <= 12 ? returnMsg += "kid": ''
+    age > 12 && age <= 17? returnMsg += "teenager": ''
+    age > 17 && age <= 64? returnMsg += "adult": ''
+    age > 64 ? returnMsg += 'elderly': ''
+
+
+    return returnMsg
 }
 
 console.log(describeAge(14))
