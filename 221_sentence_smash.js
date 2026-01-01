@@ -12,5 +12,5 @@
 //     You can assume that you do get an array.
 
 function smash (words) {
-   return ""
+   return words.join(' ')
 };
