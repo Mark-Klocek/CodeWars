@@ -32,5 +32,14 @@ console.log('227 best perk')
 
 
 function pick(preferred, blacklisted, options) {
+  let firstSelection = options[0][0]
+  let secondOption = options[0][1]
+  let thirdOption = options[0][2]
+  if (preferred.has(firstSelection)) return "A"
+  if (preferred.has(secondOption)) return "B"
+  if (preferred.has(thirdOption)) return "C"
+  if (!blacklisted.has(firstSelection)) return "A"
+  if (!blacklisted.has(secondOption)) return "B"
+  if (!blacklisted.has(thirdOption)) return "C"
   return "D"; // show me the money!
 }
