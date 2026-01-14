@@ -11,7 +11,16 @@
 
 let testArray = [4, 6, 9, 1, 3]  
 function incrementer(nums) { 
-  
+  return nums.map((element,index)=>{
+    numToAdd = index += 1
+    newTotal = element += numToAdd
+    if (newTotal > 9){
+        newTotal = newTotal % 10
+    }
+    return newTotal
+    
+    
+  })
 }
 
 
