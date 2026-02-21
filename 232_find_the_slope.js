@@ -10,10 +10,14 @@
 
 // Assume that [a,b,c,d] and the slope are all integers (no floating numbers!). Slope: https://en.wikipedia.org/wiki/Slope
 
-
-function slope(points)
-{
-//..
+console.log("CW 232")
+function slope(points){
+    deltaX = points[2]-points[0]
+    deltaY = points[3]-points[1]
+    if (deltaX === 0){return "undefined"}
+    let slope = (points[3]-points[1])/ (points[2]-points[0])
+    return slope.toString()
+    
 }
 
-slope([19,3,20,3])
+console.log(slope([19,3,20,3]))
