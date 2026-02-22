@@ -6,5 +6,19 @@ console.log("CW 234 Dominate")
 // Write a function dominator(arr) that, given a zero-indexed array arr consisting of n integers, returns the dominator of arr. The function should return −1 if array does not have a dominator. All values in arr will be >=0.
 
 function dominator(arr) {
-   //code me
+   for (let num of arr) {
+    if (count === 0) candidate = num;
+    count += (num === candidate) ? 1 : -1;
+  }
+
+  // Second pass: verify
+  let occurrences = 0;
+  for (let num of arr) {
+    if (num === candidate) occurrences++;
+  }
+
+  return occurrences > arr.length / 2 ? candidate : null;
 }
+
+
+console.log(dominator([3,4,3,2,3,1,3,3]))
