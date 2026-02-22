@@ -11,7 +11,7 @@ function dominator(arr) {
     count += (num === candidate) ? 1 : -1;
   }
 
-  // Second pass: verify
+  
   let occurrences = 0;
   for (let num of arr) {
     if (num === candidate) occurrences++;
