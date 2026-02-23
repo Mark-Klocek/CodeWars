@@ -3,8 +3,8 @@
 let testArray = [1, 1, 2, 3, 1, 2, 3, 4, 4, 3, 5, 6, 7, 2, 8]
 let testMarked = [1, 3, 4, 2]
 
-function removedMark(parentArray,markedArray){
-    
+function removedMark(integer_list,values_list){
+    return integer_list.filter(element => !values_list.includes(element))
 }
 
 console.log(removedMark(testArray, testMarked))
