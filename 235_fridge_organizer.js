@@ -30,7 +30,7 @@ const items = [
 
 function fridgeOrganizer(items) {
 
-    let sorted_days = items.sort((a,b)=> a.expiryDays < b.expiryDays)
+    let sorted_days = items.sort((a,b)=> a.expiryDays - b.expiryDays)
     return sorted_days
 }
 
