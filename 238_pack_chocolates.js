@@ -25,5 +25,28 @@
 // # accomplishment, therefore don't use it!
 // make_chocolates (3, 1, 6) => 3  
 function makeChocolates(small, big, goal) {
-  return -100;
+    // if there aren't enough chocolates to fulfill the order
+    if ((small * 2)+(big * 5)< goal) return -1
+
+    // if number is divisible by  5
+    if (goal % 5 === 0) return 0
+
+    // if number < 5
+    if (goal < 5){
+        
+    }
+    if (5 + 2 > goal){
+    return goal % 2 === 0 ? goal / 2 : -1
+    }
+    
 }
+
+console.log(makeChocolates(4,1,13) === 4)
+console.log(makeChocolates(4, 1, 14) === -1)
+console.log(makeChocolates(2, 1, 7) === 1)
+console.log(makeChocolates(3, 1, 5) === -1)
+console.log(makeChocolates(3, 3, 15) === 0)
+
+// if there arent enough chocolates
+// if the number is less than 5
+// if the number is divisible by 5
