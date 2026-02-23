@@ -3,7 +3,7 @@
 
 let testers = '1001001'
 function binToDec(bin) {
-  
+  return parseInt(bin,2)
 }
 
 
