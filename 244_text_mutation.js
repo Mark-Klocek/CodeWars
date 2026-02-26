@@ -17,9 +17,14 @@
 
 function contamination(text, char){
 
-    
+    //if either a re rempty, return empty string
+    if (text.length == 0 || char.length === 0) return ""
+
+    //replacing each letter in the text string with the char variable
+    let mutateArr = text.split('').map((element)=> element = char)
+    return mutateArr.join('')
 
 
 }
 
-console.log(contamination("","xxx"))
+console.log(contamination("asdasd","x"))
