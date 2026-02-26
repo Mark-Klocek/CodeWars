@@ -11,5 +11,11 @@
 // 0      -> 0
 
 function noBoringZeros(n) {
-  // your code
+    let splitNum = n.toString().split('')
+    while (splitNum[splitNum.length - 1]== 0){
+        let zero = splitNum.pop()
+    }
+    return Number(splitNum.join(''))
 }
+
+console.log(noBoringZeros(92130000))
