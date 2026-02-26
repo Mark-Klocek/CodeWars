@@ -18,5 +18,25 @@
 
 // '0' and '?' returns -1
 function sameCase(a, b){
-  return 0;
+
+    //setting both variables to their char code
+    let aChar = a.charCodeAt(0)
+    let bChar = b.charCodeAt(0)
+
+    //checking to verify both inputs are letters
+    if (!(aChar >= 97 && aChar <= 122) && !(aChar >= 65 && aChar <= 90)){
+        
+        return -1
+    }else if (!(bChar >= 97 && bChar <= 122) && !(bChar >= 65 && bChar <= 90)){
+        
+        return -1
+    }
+    //checking to see if they are the same case
+    if (((aChar >= 97 && aChar <= 122) && (bChar >= 97 && bChar <= 122)) || ((aChar >= 65 && aChar <= 90) && (bChar >= 65 && bChar <= 90))){
+        return 1
+    } 
+    //if cases dont match, returning 0
+    return 0;
 }
+
+console.log(sameCase("C","c"))
