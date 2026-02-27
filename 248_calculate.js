@@ -12,5 +12,11 @@
 // (4,"/",0) --> null
 
 function calculate(a, operator, b) {
- 
+ if (operator == "+") return a + b
+ if (operator == "-") return a - b
+ if (operator == "*") return a * b
+ if (operator == "/" && b!== 0) return a / b
+ return null
 }
+
+console.log(calculate(3.2,"/", 8))
