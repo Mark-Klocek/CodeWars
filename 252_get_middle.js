@@ -10,6 +10,14 @@
 // "middle" --> "dd"
 // "A" --> "A"
 function getMiddle(s) {
-  //Code goes here!
-    return '';
+  let splitString = s.split('')
+  let returnString = ""
+  if (splitString.length % 2 === 0){
+    
+    returnString += splitString[splitString.length / 2 - 1]
+    returnString += splitString[splitString.length / 2]
+  }else{
+    returnString += splitString[Math.floor(splitString.length / 2)]
+  }
+    return returnString;
 }
