@@ -18,7 +18,14 @@
 // Tip: Some languages have a way to make parameters optional.
 
 function closeCompare(a, b, margin = 0){
-  
+  numDifference = Math.abs(a-b)
+  if (numDifference <= margin) return 0
+
+  if (a>b){
+    return 1
+  }else{
+    return -1
+  }
 }
 
 console.log(closeCompare(663 , -5165, 4361)) //should be 1
