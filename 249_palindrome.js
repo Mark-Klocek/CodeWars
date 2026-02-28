@@ -3,5 +3,8 @@
 // A palindrome is a word, number, phrase, or other sequence of symbols that reads the same backwards as forwards, such as madam or racecar.
 
 function isPalindrome(x) {
-  // your code here
+    x = x.toLowerCase()
+  return x.split('').reverse().join('') == x
 }
+
+console.log(isPalindrome("Madam"))
