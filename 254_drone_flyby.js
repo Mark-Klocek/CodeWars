@@ -7,7 +7,19 @@
 // The drone string represents the position of the drone T (any better suggestion for character??) and its flight path up until this point =. The drone always flies left to right, and always begins at the start of the row of lamps. Anywhere the drone has flown, including its current position, will result in the lamp at that position switching on.
 
 // Return the resulting lamps string. See example tests for more clarity.
+let lampString = 'xxxxxx';
+let droneString = '====T';
+
 
 function flyBy(lamps, drone){
-
+    let returnArray = lamps.split('').map((element,index)=>{
+        if (index < drone.length){
+            return "o"
+        }
+        return element
+    })
+    
+    return returnArray.join('')
 }
+
+console.log(flyBy(lampString,droneString))
