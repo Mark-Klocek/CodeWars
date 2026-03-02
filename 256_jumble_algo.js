@@ -64,10 +64,17 @@
 
 let testARray = [2, 6, 8, 3, 5, 4, 0, 7, 1]
 function jumbler(indices) {
+    let counter = 0
+  while (indices[0] != 0){
+    
+    let temp = indices[indices[0]]
+    indices.splice(indices[0],1)
+    indices.unshift(temp)
+    counter ++
 
-  //  <----  hajime!
-
-  return indices;
+  }
+  console.log(indices)
+  return counter;
 }
 
 console.log(jumbler(testARray))
