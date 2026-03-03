@@ -21,7 +21,19 @@
 //     Repetition of numbers in the array/list could occur , So (duplications are not included when separating).
 
 function menFromBoys(arr){
-   
+    let men = []
+    let boys = []
+    arr.forEach((element)=>{
+        element % 2 == 0 ? men.push(element) : boys.push(element)
+    })
+    men = men.sort((a,b)=> a-b)
+    
+    boys = boys.sort((a,b) => b-a)
+    men.push(...boys)
+    let returnSet = new Set(men)
+    let realReturnSet = [...returnSet]
+    
+  return realReturnSet
 }
 
 console.log(menFromBoys([49,818,-282,900,928,281,-282,-1]))
