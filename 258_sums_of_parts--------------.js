@@ -15,18 +15,21 @@
 
 // The function parts_sums (or its variants in other languages) will take as parameter a list ls and return a list of the sums of its parts as defined above.
 
+//// FIX ME /////////////
 let testArray = [0, 1, 3, 6, 10]
 
 function partsSums(ls) {
     let returnArray = []
+    let total = ls.reduce((c,t)=> t+= c,0)
+    returnArray.push(total)
 
     while (ls.length > 0){
-        console.log(ls)
-        let total = ls.reduce((c,t)=> t+= c,0)
-        returnArray.push(total)
         let shifter = ls.shift()
+        total = total - shifter
+        returnArray.push(total)
+        
     }
-    returnArray.push(0)
+    
     return returnArray
 }
 
