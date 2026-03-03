@@ -18,7 +18,16 @@
 let testArray = [0, 1, 3, 6, 10]
 
 function partsSums(ls) {
-   
+    let returnArray = []
+
+    while (ls.length > 0){
+        console.log(ls)
+        let total = ls.reduce((c,t)=> t+= c,0)
+        returnArray.push(total)
+        let shifter = ls.shift()
+    }
+    returnArray.push(0)
+    return returnArray
 }
 
 console.log(partsSums(testArray))
