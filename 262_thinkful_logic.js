@@ -21,7 +21,20 @@
 
 function colorProbability(color, texture){
   
- 
+  let bumpy = {
+    'red': 4,
+    'yellow': 2,
+    'green' : 1,
+  }
+  let smooth = {
+    'red' : 1,
+    'yellow': 1, 
+    'green' : 1
+
+  }
+  let probNumber =  (texture == "bumpy" ? bumpy[color] / 7 : smooth[color] / 3).toString()
+  let myNumber = probNumber.slice(0,4)
+  return myNumber
 }
 
 console.log(colorProbability("green","bumpy"))
