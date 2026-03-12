@@ -15,5 +15,13 @@
 // If an empty value ( null, None, Nothing, nil etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
 
 function sumArray(array) {
+    if (array.length < 3) return 0
+    let arrayTotal = array.reduce((acc,c)=> acc+= c,0)
+    array = array.sort((a,b)=> a-b)
+    arrayTotal = arrayTotal - array[0]
+    arrayTotal = arrayTotal - array[array.length -1]
 
+    return arrayTotal
 }
+
+console.log( sumArray([ 6, 2, 1, 8, 10 ]))
