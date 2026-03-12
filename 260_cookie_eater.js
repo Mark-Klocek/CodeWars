@@ -7,5 +7,13 @@
 // Please leave feedback for this kata. Cheers!
 
 function cookie(x){
-  // ...
+    
+  if (typeof(x) == 'string'){
+    return "Who at the last cookie? It was Zach!"
+  }else if (typeof(x) == 'number'){
+    return "Who at the last cookie? It was Monica!"
+  }
+  return "Who at the last cookie? It was the dog!"
 }
+
+console.log(cookie(123.2))
