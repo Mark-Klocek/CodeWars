@@ -6,6 +6,16 @@
 
 // If there is no such number in the array, 0 should be returned.
 
+
+let testArray = [3, 12, 5, 8, 30, 13]
 function magicSum(numbers) {
-  // TODO: Program Me
+  let magicThreeTotal = 0
+  numbers.forEach((element)=>{
+    if ((element.toString().includes('3')) && element % 2 !== 0){
+      magicThreeTotal += element
+    }
+  })
+  return magicThreeTotal
 }
+
+console.log(magicSum(testArray))
