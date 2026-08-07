@@ -23,5 +23,9 @@
 function countSheeps(sheep) {
   // iterate over the array, if the current element is true, we add it to return value
   // return value of total amount of true in the array
-    
+    let returnCount = 0
+  sheep.forEach(e=>{
+    if (e == true) returnCount ++
+  })
+  return returnCount
 }
