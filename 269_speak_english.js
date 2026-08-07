@@ -12,8 +12,13 @@
 
 //E: wowoenglish => true
 
-
+let tester = "abcEnglwewishdef"
 
 function spEng(sentence){
-//P:
+//P: since case does not matter, we can first make the string lowercase
+//  then we check to see if the string includes the word english, return if it does or not
+
+    return sentence.toLowerCase().includes('english')
 }
+
+console.log(spEng(tester))
