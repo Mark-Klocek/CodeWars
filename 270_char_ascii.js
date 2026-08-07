@@ -15,5 +15,5 @@
 
 function getChar(c){
   //P use the fromcharcode method
-  
+  return String.fromCharCode(c)
 }
