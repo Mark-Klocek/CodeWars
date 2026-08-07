@@ -17,7 +17,36 @@
 //R: it wants us to return an array of strings that are split based on the "mask" (integer) in the 2nd array of integers
 
 //E: "myexample", (2, 7) =>["my","example"]. If the length of the string does not equal the sum of the mask array, we return None, or Null 
-function split(string,mask) {
-    //P:
-  return [] || null ;
+let myString= "1234567890"
+let myMask = [3,3,4]
+function split(myString,myMask) {
+    let newArr = myString.split('')
+    let returnArr = []
+    //P: verify that the length of string is equal to sum of mask
+    //  split the original array 
+    //      Then we want to iterate through the mask array
+    //      splice from the beginning position to the position of t he current spot in mask array
+    // join the newstringtoadd which was spliced from the array to a new string, and push that string onto return array
+    // return the returnarray
+    if (myMask.length == 0){
+        return null
+    }
+    myMask.forEach(e=>{
+        e < 0 ? null : ''
+    })
+    if (myString.length != myMask.reduce((total,current) => total += current)){
+        return null
+    }
+    myMask.forEach(e =>{
+        
+        let stringToAdd = newArr.splice(0,e)
+        returnArr.push(stringToAdd.join(''))
+    })
+    
+    
+
+    
+  return returnArr;
 }
+
+console.log(split(myString,myMask))
