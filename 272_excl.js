@@ -11,6 +11,11 @@
 // "Hi"      ---> "Hi"
 
 function remove (string) {
-  //coding and coding....
-  return '';
+    if (string[string.length -1] != '!'){
+        return string
+    }
+  let newArr = string.split('')
+  newArr.pop()
+
+  return newArr.join('');
 }
