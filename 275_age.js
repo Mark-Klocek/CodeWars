@@ -12,6 +12,7 @@
 function  calculateAge(birthYear, relationYear) {  
   // enter your code here.
 
-    
+    if (birthYear == relationYear) return "You were born this very year!"
+    return birthYear > relationYear ? `You will be born in ${birthYear - relationYear} years.`: `You are ${relationYear - birthYear} years old.`
     
 }
