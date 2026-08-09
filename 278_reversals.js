@@ -14,6 +14,18 @@
 
 // Be careful. Your job is on the line!
 
+
+let testString = "Alpha hit a reversal to Bravo hit a reversal to reversal Alpha"
 function whowon(s) {
-  return 
+    s = s.split(' ')
+    let firstWrestler = s[0]
+    let secondWrestler = s[5]
+    let reverseCount = 0
+    s.forEach(e=> e == "reversal" ? reverseCount++:'')
+    
+  return reverseCount % 2 != 0 ? firstWrestler : secondWrestler
 }
+
+
+
+console.log(whowon(testString))
