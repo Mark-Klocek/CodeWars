@@ -15,5 +15,8 @@
 
 
 function toAcronym(inp){
-  // ...
+  inp = inp.split(' ')
+  let returnAcronym = ''
+  inp.forEach((e)=> returnAcronym += e[0].toUpperCase())
+  return returnAcronym
 }
